@@ -25,5 +25,102 @@ def on_logo_pressed():
         False)
 input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_pressed)
 
+t1 = 20
+t2 = 40
+r = 0
+p = 0
 keyboard.start_keyboard_service()
 keyboard.set_events_per_second(1)
+
+def on_forever():
+    global r, p
+    r = input.rotation(Rotation.ROLL)
+    p = input.rotation(Rotation.PITCH)
+    doRoll()
+basic.forever(on_forever)
+
+def doRoll():
+    if r > 0 - t1 and r < t1:
+        doPitch()
+    elif r < 0 - t2:
+        basic.show_leds("""
+    . . . . .
+    . . . . .
+    # . . . .
+    . . . . .
+    . . . . .
+    """)
+    #turnLeft
+    elif r < 0 - t1:
+        basic.show_leds("""
+        . . . . .
+        . . . . .
+        . # . . .
+        . . . . .
+        . . . . .
+        """)
+        #gotLeft
+    elif r > t2:
+        basic.show_leds("""
+        . . . . .
+        . . . . .
+        . . . . #
+        . . . . .
+        . . . . .
+        """)
+        #turnRight
+    else:
+        basic.show_leds("""
+        . . . . .
+        . . . . .
+        . . . # .
+        . . . . .
+        . . . . .
+        """)
+        #goRight
+
+def doPitch():
+    if p > 0 - t1 and p < t1:
+        basic.show_leds("""
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            """)
+        # goDown
+    elif p < 0 - t2:
+        basic.show_leds("""
+            . . # . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            """)
+        #goForward
+    elif p < 0 - t1:
+        basic.show_leds("""
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            . . . . .
+            """)
+    elif p > t2:
+        basic.show_leds("""
+            . . . . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . # . .
+            """)
+    # goUp
+    else:
+        basic.show_leds("""
+            . . . . .
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            """)
+        #goBack
