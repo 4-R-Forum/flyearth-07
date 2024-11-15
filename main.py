@@ -4,8 +4,14 @@ def turnLeft():
 def goBack():
     keyboard.send_string(keyboard.keys(keyboard._Key.DOWN))
 def makeMove(text: str):
+    global tm
     if text == "gF":
-        goForward()
+        lm = ""
+        tm = text
+        if lm != tm:
+            keyboard.send_simultaneous_keys("" + keyboard.keys(keyboard._Key.UP), False)
+    if text == "gB":
+        goBack()
     elif text == "gU":
         goUp()
     elif text == "gD":
@@ -76,12 +82,14 @@ def doPitch():
             . . . . .
             """)
         makeMove("gU")
+def waitA():
+    while not (input.button_is_pressed(Button.A)):
+        continue
 def lookUp():
     keyboard.send_simultaneous_keys("" + keyboard.modifiers(keyboard._Modifier.SHIFT) + keyboard.keys(keyboard._Key.DOWN),
         False)
 def goRight():
     keyboard.send_string(keyboard.keys(keyboard._Key.RIGHT))
-
 def doRoll():
     if r > 0 - t1 and r < t1:
         # no roll, do doPitch
@@ -140,18 +148,24 @@ def goDown():
 def on_logo_pressed():
     basic.show_string("fw")
     keyboard.send_string(keyboard.keys(keyboard._Key.UP))
+    waitA()
     basic.show_string("bk")
     keyboard.send_string(keyboard.keys(keyboard._Key.DOWN))
+    waitA()
     basic.show_string("up")
     keyboard.send_string(keyboard.raw_scancode(91))
+    waitA()
     basic.show_string("dn")
     keyboard.send_string(keyboard.raw_scancode(97))
+    waitA()
     basic.show_string("gL")
     keyboard.send_string(keyboard.keys(keyboard._Key.LEFT))
+    waitA()
     basic.show_string("tL")
     keyboard.send_simultaneous_keys("" + keyboard.modifiers(keyboard._Modifier.SHIFT) + keyboard.keys(keyboard._Key.RIGHT),
         False)
     basic.show_string("gR")
+    waitA()
     keyboard.send_string(keyboard.keys(keyboard._Key.RIGHT))
     basic.show_string("Tr")
     keyboard.send_simultaneous_keys("" + keyboard.modifiers(keyboard._Modifier.SHIFT) + keyboard.keys(keyboard._Key.LEFT),
@@ -159,6 +173,7 @@ def on_logo_pressed():
     basic.show_string("lu")
     keyboard.send_simultaneous_keys("" + keyboard.modifiers(keyboard._Modifier.SHIFT) + keyboard.keys(keyboard._Key.DOWN),
         False)
+    waitA()
     basic.show_string("ld")
     keyboard.send_simultaneous_keys("" + keyboard.modifiers(keyboard._Modifier.SHIFT) + keyboard.keys(keyboard._Key.UP),
         False)
@@ -168,6 +183,7 @@ def goUp():
     keyboard.send_string(keyboard.raw_scancode(91))
 r = 0
 p = 0
+tm = ""
 t2 = 0
 t1 = 0
 t1 = 20
