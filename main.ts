@@ -6,33 +6,33 @@ function goBack () {
 }
 function makeMove (text: string) {
     if (text == "gF") {
-        let lm = ""
         tm = text
         if (lm != tm) {
-            keyboard.sendSimultaneousKeys("" + keyboard.keys(keyboard._Key.up), false)
+            keyboard.sendSimultaneousKeys("" + keyboard.keys(keyboard._Key.up), true)
         }
-    }
-    keyboard.releaseKeys()
-    if (text == "gB") {
-        goBack()
-    } else if (text == "gU") {
-        goUp()
-    } else if (text == "gD") {
-        goDown()
-    } else if (text == "gR") {
-        goRight()
-    } else if (text == "tR") {
-        turnRight()
-    } else if (text == "gL") {
-        goLeft()
-    } else if (text == "tL") {
-        turnLeft()
-    } else if (text == "lU") {
-        lookUp()
-    } else if (text == "lD") {
-        lookDown()
+        lm = tm
     } else {
-    	
+        keyboard.releaseKeys()
+        if (text == "gB") {
+            goBack()
+        } else if (text == "gU") {
+            goUp()
+        } else if (text == "gD") {
+            goDown()
+        } else if (text == "gR") {
+            goRight()
+        } else if (text == "tR") {
+            turnRight()
+        } else if (text == "gL") {
+            goLeft()
+        } else if (text == "tL") {
+            turnLeft()
+        } else if (text == "lU") {
+            lookUp()
+        } else if (text == "lD") {
+            lookDown()
+        }
+        lm = text
     }
 }
 function goForward () {
@@ -48,6 +48,7 @@ function doPitch () {
             . . . . .
             . . . . .
             `)
+        makeMove("")
     } else if (p < 0 - t2) {
         // goDown
         basic.showLeds(`
@@ -78,7 +79,7 @@ function doPitch () {
             . . # . .
             `)
         makeMove("gU")
-    } else {
+    } else if (p > t1) {
         // goUp
         basic.showLeds(`
             . . . . .
@@ -88,6 +89,8 @@ function doPitch () {
             . . . . .
             `)
         makeMove("gU")
+    } else {
+        makeMove("")
     }
 }
 function waitA () {
@@ -193,6 +196,7 @@ function goUp () {
 }
 let r = 0
 let p = 0
+let lm = ""
 let tm = ""
 let t2 = 0
 let t1 = 0

@@ -4,32 +4,33 @@ def turnLeft():
 def goBack():
     keyboard.send_string(keyboard.keys(keyboard._Key.DOWN))
 def makeMove(text: str):
-    global tm
+    global tm, lm
     if text == "gF":
-        lm = ""
         tm = text
         if lm != tm:
-            keyboard.send_simultaneous_keys("" + keyboard.keys(keyboard._Key.UP), False)
-    if text == "gB":
-        goBack()
-    elif text == "gU":
-        goUp()
-    elif text == "gD":
-        goDown()
-    elif text == "gR":
-        goRight()
-    elif text == "tR":
-        turnRight()
-    elif text == "gL":
-        goLeft()
-    elif text == "tL":
-        turnLeft()
-    elif text == "lU":
-        lookUp()
-    elif text == "lD":
-        lookDown()
+            keyboard.send_simultaneous_keys("" + keyboard.keys(keyboard._Key.UP), True)
+        lm = tm
     else:
-        pass
+        keyboard.release_keys()
+        if text == "gB":
+            goBack()
+        elif text == "gU":
+            goUp()
+        elif text == "gD":
+            goDown()
+        elif text == "gR":
+            goRight()
+        elif text == "tR":
+            turnRight()
+        elif text == "gL":
+            goLeft()
+        elif text == "tL":
+            turnLeft()
+        elif text == "lU":
+            lookUp()
+        elif text == "lD":
+            lookDown()
+        lm = text
 def goForward():
     keyboard.send_string(keyboard.keys(keyboard._Key.UP))
 def doPitch():
@@ -42,6 +43,7 @@ def doPitch():
             . . . . .
             . . . . .
             """)
+        makeMove("")
     elif p < 0 - t2:
         # goDown
         basic.show_leds("""
@@ -72,7 +74,7 @@ def doPitch():
             . . # . .
             """)
         makeMove("gU")
-    else:
+    elif p > t1:
         # goUp
         basic.show_leds("""
             . . . . .
@@ -82,6 +84,8 @@ def doPitch():
             . . . . .
             """)
         makeMove("gU")
+    else:
+        makeMove("")
 def waitA():
     while not (input.button_is_pressed(Button.A)):
         continue
@@ -183,6 +187,7 @@ def goUp():
     keyboard.send_string(keyboard.raw_scancode(91))
 r = 0
 p = 0
+lm = ""
 tm = ""
 t2 = 0
 t1 = 0
@@ -194,6 +199,6 @@ keyboard.set_events_per_second(1)
 def on_forever():
     global r, p
     r = input.rotation(Rotation.ROLL)
-    p = input.rotation(Rotation.PITCH)
+    p = -21
     doRoll()
 basic.forever(on_forever)
