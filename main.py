@@ -199,6 +199,6 @@ keyboard.set_events_per_second(1)
 def on_forever():
     global r, p
     r = input.rotation(Rotation.ROLL)
-    p = -21
+    p = input.rotation(Rotation.PITCH)
     doRoll()
 basic.forever(on_forever)
