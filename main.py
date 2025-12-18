@@ -37,7 +37,7 @@ def makeMove(text: str):
 # For unit test of a single move
 
 def on_logo_long_pressed():
-    goUp()
+    loadKML()
 input.on_logo_event(TouchButtonEvent.LONG_PRESSED, on_logo_long_pressed)
 
 def goForward():
@@ -119,6 +119,9 @@ def waitA(move: str):
 def test4():
     # PgDown USB hex 4E
     keyboard.send_string(keyboard.raw_scancode(75))
+def loadKML():
+    keyboard.send_simultaneous_keys("" + keyboard.modifiers(keyboard._Modifier.CONTROL) + "i",
+        False)
 # kd backxpace
 # ku backspace
 # kd down arrow
@@ -231,6 +234,8 @@ t1 = 20
 t2 = 40
 keyboard.start_keyboard_service()
 keyboard.set_events_per_second(1)
+basic.pause(1000)
+loadKML()
 # main loop. set vars r and p, call doRoll
 
 def on_forever():
