@@ -234,7 +234,7 @@ t1 = 20
 t2 = 40
 keyboard.start_keyboard_service()
 keyboard.set_events_per_second(1)
-basic.pause(1000)
+basic.pause(3000)
 loadKML()
 # main loop. set vars r and p, call doRoll
 
