@@ -40,7 +40,7 @@ function makeMove (text: string) {
 }
 // For unit test of a single move
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
-    goUp()
+    loadKML()
 })
 function goForward () {
     keyboard.sendString(keyboard.keys(keyboard._Key.up))
@@ -128,6 +128,9 @@ function waitA (move: string) {
 function test4 () {
     // PgDown USB hex 4E
     keyboard.sendString(keyboard.rawScancode(75))
+}
+function loadKML () {
+    keyboard.sendSimultaneousKeys("" + keyboard.modifiers(keyboard._Modifier.control) + "i", false)
 }
 // kd backxpace
 // ku backspace
@@ -246,6 +249,8 @@ t1 = 20
 t2 = 40
 keyboard.startKeyboardService()
 keyboard.setEventsPerSecond(1)
+basic.pause(1000)
+loadKML()
 // main loop. set vars r and p, call doRoll
 basic.forever(function () {
     r = input.rotation(Rotation.Roll)
