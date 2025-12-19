@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+	xmlns:gx="http://www.google.com/kml/ext/2.2"
+	xmlns:kml="http://www.opengis.net/kml/2.2"
+	xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>NorthMonumnetValley</name>
+		<gx:CascadingStyle kml:id="__managed_style_231109F1653C68BD1434">
+			<Style>
+				<IconStyle>
+					<scale>1.2</scale>
+					<Icon>
+						<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+					</Icon>
+					<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+				</IconStyle>
+				<LabelStyle>
+				</LabelStyle>
+				<LineStyle>
+					<color>ff2dc0fb</color>
+					<width>6</width>
+				</LineStyle>
+				<PolyStyle>
+					<color>40ffffff</color>
+				</PolyStyle>
+				<BalloonStyle>
+					<displayMode>hide</displayMode>
+				</BalloonStyle>
+			</Style>
+		</gx:CascadingStyle>
+		<gx:CascadingStyle kml:id="__managed_style_16496E50423C68BD1434">
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+					</Icon>
+					<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+				</IconStyle>
+				<LabelStyle>
+				</LabelStyle>
+				<LineStyle>
+					<color>ff2dc0fb</color>
+					<width>4</width>
+				</LineStyle>
+				<PolyStyle>
+					<color>40ffffff</color>
+				</PolyStyle>
+				<BalloonStyle>
+					<displayMode>hide</displayMode>
+				</BalloonStyle>
+			</Style>
+		</gx:CascadingStyle>
+		<StyleMap id="__managed_style_07A2B811193C68BD1434">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#__managed_style_16496E50423C68BD1434</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#__managed_style_231109F1653C68BD1434</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Placemark id="0289C0C0633C68BD1413">
+			<name>North Monument Valley View Point</name>
+
+			<styleUrl>#__managed_style_07A2B811193C68BD1434</styleUrl>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<coordinates>-110.0445741,37.0664564,0</coordinates>
+			</Point>
+		</Placemark>
+		<LookAt>
+			<longitude>-110.0455191082897</longitude>
+			<latitude>37.0805800010847</latitude>
+			<altitude>1592.692356168702</altitude>
+			<heading>173.8025341162815</heading>
+			<tilt>82.36405568490193</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2064.649796562153</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+	</Document>
+</kml>

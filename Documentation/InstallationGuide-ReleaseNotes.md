@@ -46,35 +46,7 @@ In these steps '->' indicates the expected result.
 
 That's the trickiest part of setup. Once you are connected you laptop will remember BBC Microbit and connect again easily. If not, repeat all the steps.
 
-### Open Google Earth in a browser
 
-1. Use Chrome or Edge, both work equally well
-2. Standard (free) Google Earth is all you needh/answer/7365484
-    - Use the web version, to fly with [keystrokes](https://developers.google.com/maps/documentation/earth/use-keyboard-shortcuts)
-    - Google Earth Pro App is not supported
-3. Login to Google is optional
-4. Type https://earth.google.com/ into the address bar at top -> Google Earth opens
-5. Click 'Explore Earth at top right. -> View of the globe appears
-
-### Navigate to where you want to go
-
-Let's start with the the Pyramids.
-
-1. Type "Great Pyrmamid of Giza" into the searchbox at top left and press Enter -> flies you there
-2. Press letter "O" then any other key to stop rotating -> view changes from 2D to 3D and stops
-3. Press and hold Shift-DownArrow until horizon appears
-4. Press "?" -> Keyboard shortcut dialog is  displayed, press x at top right to closeit
-5. Now you are ready to fly
-
-## **Fly Earth!**
-
-1. Turn the micro_bit on and hold it level -> center led lights
-2. Tilt it forward -> second row led lights, you fly forward
-3. Tilt it left -> second column led lithts, you fly left
-4. Tilt more left -> left column led lights, you turn left
-5. Tilt more forward -> top row center led lights, you go up
-6. Tilt other directions -> opposite of above
-7. Hold level -> you stop.
 
 ## Release Notes
 1. First release of FlyEarth-07. In work 12/15/2025

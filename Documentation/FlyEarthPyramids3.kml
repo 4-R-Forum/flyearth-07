@@ -60,15 +60,25 @@
                 <styleUrl>#__managed_style_38B8841A9A3C587F9044</styleUrl>
             </Pair>
         </StyleMap>
+        <!--
         <Camera>
             <longitude>31.1303111</longitude>
             <latitude>29.9783917</latitude>
-            <altitude>75.4436642</altitude>
+            <altitude>150</altitude>
             <heading>98.8098549</heading>
             <tilt>80.0635755</tilt>
             <roll>0</roll>
             <altitudeMode>absolute</altitudeMode>
-        </Camera>
+        </Camera> -->
+        <LookAt>
+            <longitude>31.13078825901244</longitude>
+            <latitude>29.97857414255098</latitude>
+            <altitude>73</altitude>
+            <heading>98.8098549</heading>
+            <tilt>80.0635755</tilt>
+            <range>1500</range>
+            <altitudeMode>absolute</altitudeMode>
+        </LookAt>
         <Placemark id="08AD3479643C587F9037">
             <name>Start</name>
             <styleUrl>#__managed_style_103678C6433C587F9044</styleUrl>
