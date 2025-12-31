@@ -1,14 +1,14 @@
 # FlyEarth-07
 
-This GitHib repo enables a BBC micro:bit (mbit) to be used to simulate the experience of flying in Google Earth Web. The mbit senses pitch and roll in its accelerometers, and sends keystrokes via bluetooth to a loptop running Google Earth in a browser. Video at xixx. Code is written in blocks in MakeCode.
+This Project enables a BBC micro:bit (mbit) to be used to simulate the experience of flying in Google Earth Web. The mbit senses pitch and roll in its accelerometers, and sends keystrokes via bluetooth to a laptop running Google Earth in a browser. Video at xixx. Code is written in blocks in MakeCode.
 
-The BLE-HID (Bluetooth Low Energy - Human Interface Device) Extention by Bill Siever is used. Thank you Bill!
+The BLE-HID (Bluetooth Low Energy - Human Interface Device) Extension by Bill Siever is used. Thank you Bill!
 
 The purpose of this project is not only to enable young people to explore the world, it is also to provide an example of how to develop good engineering skills for making things work with teamwork. It's more fun and less work. The principles of systems engineering are encapsulated in Deming's Plan-Do-Check-Act. Learn how to use it and everbody will have a much better day.
 
 ## Installation Guide
 
-If you are new to mbit, please familiarize yourself at makecode.microbit.org and make sure you can download to and run projects first.
+If you are new to mbit, please familiarize yourself at makecode.microbit.org and make sure you can download and run projects first.
 
 ### Required Hardware
 
